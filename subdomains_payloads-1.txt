@@ -2,3 +2,4 @@ www
 mail
 ftp
 local
+http
