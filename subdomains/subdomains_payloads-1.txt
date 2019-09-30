@@ -3,3 +3,4 @@ mail
 ftp
 local
 http
+admin
