@@ -30,3 +30,5 @@
 
 <audio src=x onerror=javascript:alert(123)>
 <audio src=x onerror=alert(123)>
+
+%3cscript%3ealert%28123%29%3c%2fscript%3e
