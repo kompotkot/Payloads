@@ -1,6 +1,0 @@
-www
-mail
-ftp
-local
-http
-admin
