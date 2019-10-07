@@ -1,4 +1,3 @@
-
 <script>alert(123);</script>
 <ScRipt>alert(123)</ScRipt>
 <SCRIPT>alert(123)</SCRIPT>
