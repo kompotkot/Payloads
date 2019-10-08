@@ -1,33 +1,34 @@
 """
-> python3 LinkDiscovery-Scanner.py https://google.com
-Внедрить многопоточность
+> python3 LinkDiscovery-Scanner.py https://google.com 1
 """
-
-
-import requests, sys
+import requests
+import sys
+import time
 
 
 urlBody = str(sys.argv[1])
+lstNumber = sys.argv[2]
 
+lstTest = '/root/Documents/Projects/TechGovSg/payloads.txt'
 lst1 = '/root/Documents/GitHub/Payloads/folders/folders-payloads-admin.txt'
 lst2 = '/root/Documents/GitHub/Payloads/folders/folders-payloads-debug.txt'
 lst3 = '/root/Documents/GitHub/Payloads/folders/folders-payloads-other.txt'
 lst4 = '/root/Documents/GitHub/Payloads/subdomains/subdomains-payloads-total.txt'
 
+generatedFile = '3-LinkDiscovery-' + lstNumber + '.txt'
+
 
 def getResponse(someUrl):
 	try:
-		response = requests.get(someUrl, timeout=10)
+		response = requests.get(someUrl, timeout=5)
 		response.raise_for_status()
-		stat = str(response.status_code)
-		return stat
+		return str(response.status_code)
 	except requests.exceptions.RequestException as err:
-		stat = str(response.status_code)
-		return stat
+		return str(response.status_code)
 		#return err
 
 
-def urlChanger(someUrl, folderList, toFile='3-LinkDiscovery.txt'):
+def urlChanger(someUrl, folderList, toFile=generatedFile):
 	totalLines = len(open(folderList).readlines())	#Get total number of lines for our counter
 	cnt = 1
 
@@ -54,4 +55,18 @@ def urlChanger(someUrl, folderList, toFile='3-LinkDiscovery.txt'):
 	print('End of scan')
 
 
-urlChanger(urlBody, lst1)
+def main():
+	startTime = time.time()
+
+	if lstNumber == '1':
+		urlChanger(urlBody, lst1)
+	elif lstNumber == '2':
+		urlChanger(urlBody, lst2)
+	elif lstNumber == '3':
+		urlChanger(urlBody, lst3)
+
+	print(time.time() - startTime)
+
+
+if __name__ == '__main__':
+	main()
