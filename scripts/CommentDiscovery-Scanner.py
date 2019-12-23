@@ -1,13 +1,18 @@
-"""
-> python3 CommentDiscovery-Scanner.py urllist.txt
-"""
-import requests
-import sys
 import time
+import argparse
+import requests
+from collections import ChainMap
 
 
-urlList = str(sys.argv[1])
-generatedFile = '3-CommentDiscovery.txt'
+defaults = {'list': 'urllist.txt', 'output': 'urlcomments.txt'}
+
+parser = argparse.ArgumentParser(description='Comment discovery scanner in code.')
+parser.add_argument('-l', '--list', help='Source of urls list file for scan (default: urllist.txt)')
+parser.add_argument('-o', '--output', help='The file you want to save found comments (default: urlcomments.txt)')
+
+args = parser.parse_args()
+new_dict = {key: value for key, value in vars(args).items() if value}
+settings = ChainMap(new_dict, defaults)
 
 def getResponse(someUrl):
 	try:
@@ -22,7 +27,7 @@ def getResponse(someUrl):
 		return str(r.status_code)
 		#return err
 
-def fileWriter(urlList, toFile=generatedFile):
+def fileWriter(urlList, toFile):
 	tof = open(toFile, 'w')
 
 	with open(urlList) as fp:
@@ -47,10 +52,8 @@ def commentFilter(someLst):
 
 def main():
 	startTime = time.time()
-	fileWriter(urlList)
-	print(time.time() - startTime)	
+	fileWriter(settings['list'], settings['output'])
+	print(f'Required time: {time.time() - startTime}')
 
 if __name__ == '__main__':
 	main()
-
-	
