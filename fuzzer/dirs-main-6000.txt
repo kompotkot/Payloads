@@ -25,6 +25,7 @@ core
 icons
 class
 Util
+cgi-bin
 silver
 dialog
 www
