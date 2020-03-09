@@ -12,4 +12,4 @@ Scripts:<br>
 - SimpleHTTPServer.py fast python server for file transfer<br>
 - jalesc.sh linux enumeration tool from https://github.com/itsKindred<br>
 - sherlock.ps1 windows enumeration tool from https://github.com/rasta-mouse/Sherlock<br>
-- db dorks parser<br>
+- DNSScan.sh script to check output dnsenum tool<br>
