@@ -3,6 +3,10 @@ python2:
 > python -m SimpleHTTPServer 7331
 python3:
 > python3 -m http.server 7331
+php:
+> php -S 0.0.0.0:8000
+ruby:
+> ruby -run -e httpd . -p 9000
 """
 
 import http.server
