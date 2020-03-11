@@ -1,3 +1,10 @@
+"""
+python2:
+> python -m SimpleHTTPServer 7331
+python3:
+> python3 -m http.server 7331
+"""
+
 import http.server
 import socketserver
 
