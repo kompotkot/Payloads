@@ -5,6 +5,7 @@ Entries
 lang
 default
 Repository
+icons
 admin
 FCKeditor
 templates_c
