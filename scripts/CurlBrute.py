@@ -10,7 +10,7 @@ import concurrent.futures
 
 
 """
-Some bicycle for bruteforse by curl in you tired of hydra, burp, zap and etc...
+Some bicycle for bruteforce by curl if you tired of hydra, burp, zap and etc...
 Works bad with threads more than 10. Requires script restart then.
 
 Check usernames and passes:
