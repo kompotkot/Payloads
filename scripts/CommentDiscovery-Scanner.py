@@ -22,6 +22,7 @@ async def fetch(session, url):
         # print('Content-type:', response.headers['content-type'])
         html = await response.text()
         someComments = commentFilter(html.strip())  # strip() to delete \n
+
         return someComments
 
 
