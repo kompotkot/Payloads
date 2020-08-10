@@ -20,35 +20,35 @@ settings = ChainMap(new_dict, defaults)
 result_dct = {}
 
 
-def write_to_file(toFile, data):
-    with open(toFile, 'w') as fp:
-        json.dump(data, fp)
-
-
 async def fetch(session, url):
     async with session.get(url) as response:
-        print('Url:', url)
-        # print('Status:', response.status)
+        print(f'Status: {response.status} for url: {url}')
         # print('Content-type:', response.headers['content-type'])
         html = await response.text()
-        html_comments = commentFilter(html)  # Add strip() to delete \n
-        return html_comments
+        html_comments = commentFilter(html.strip())
+
+        # Return url too to be sure we correctly write to dictionary
+        # with correct comments
+        return url, html_comments
 
 
 async def request(url):
     async with aiohttp.ClientSession() as session:
-        html_comments = await fetch(session, url)
-        result_dct[url] = html_comments
+        html_url, html_comments = await fetch(session, url)
+        result_dct[html_url] = html_comments
         # return html_comments
 
 
 def fileWriter(urlList, toFile):
     with open(urlList) as fp:
         loop = asyncio.get_event_loop()
+        # Scheduling tasks in our loop event, and schedule our coroutines
         tasks = [asyncio.ensure_future(request(line.strip())) for line in fp]       # Task - url(line) in file
+        # Use gather to wait for all pending tasks
         loop.run_until_complete(asyncio.gather(*tasks))
 
-    write_to_file(toFile, result_dct)
+    with open(toFile, 'w') as fp:
+        json.dump(result_dct, fp)
 
 
 def commentFilter(someLst):
